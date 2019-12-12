@@ -7,7 +7,4 @@ body {
 	font-family:sans-serif;
 	text-align:center;
 }
-a:link {color: #fff;}
-a:visited {color: #fff;}
-a:active {color: #fff;}
 canvas { pointer-events:none; z-index:10; position:relative; }
