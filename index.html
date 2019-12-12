@@ -8,13 +8,10 @@
 	
 	<body>
 		<script type="text/javascript" src="build/ThreeExtras.js"></script>
+		<script type="text/javascript" src="build/RequestAnimationFrame.js"></script>
 
 		<script type="text/javascript" src="keys.js"></script>
-
-		<script type="text/javascript" src="general/RequestAnimationFrame.js"></script>
-		<script type="text/javascript" src="general/info.js"></script>
-
-
+		
 		<script type="text/javascript">
 
 			var SCREEN_WIDTH = window.innerWidth;
@@ -148,9 +145,6 @@
 					has_gl = 1;
 				}
 				catch (e) {
-					// need webgl
-					document.getElementById('info').innerHTML = "<P><BR><B>Note.</B> You need a modern browser that supports WebGL for this to run the way it is intended.<BR>For example. <a href='http://www.google.com/landing/chrome/beta/' target='_blank'>Google Chrome 9+</a> or <a href='http://www.mozilla.com/firefox/beta/' target='_blank'>Firefox 4+</a>.</P><CENTER><BR><img src='../general/WebGL_logo.png' border='0'></CENTER>";
-					document.getElementById('info').style.display = "block";
 					return;
 				}
 				
