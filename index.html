@@ -108,7 +108,7 @@
 				// Se define la esfera la cual será controlada por el usuario
 				var bola = new Sphere( 50, 20, 20);
 
-				bolaMersh = addMesh( bola, 1,  -300, FLOOR+1000, 0, 0,30,0, getSphereMaterial() );
+				bolaMersh = addMesh( bola, 1,  -300, FLOOR+1000, 0, 0,25,0, getSphereMaterial() );
 				camera.target = bolaMersh;
 
 				var colisionBola = new Cube( 20, 20, 20, 1, 1 );
@@ -189,7 +189,7 @@
 					imageTextureMaterial.map.image.loaded = 1;
 				};
 				if (slime) {
-					img.src = "textures/slime.jpg";
+					img.src = "textures/slime.png";
 				} else {
 					img.src = "textures/rock.png";
 				}
