@@ -108,7 +108,7 @@
 				// Se define la esfera la cual será controlada por el usuario
 				var bola = new Sphere( 50, 20, 20);
 
-				bolaMersh = addMesh( bola, 1,  -300, FLOOR+1000, 0, 0,20,0, getSphereMaterial() );
+				bolaMersh = addMesh( bola, 1,  -300, FLOOR+1000, 0, 0,30,0, getSphereMaterial() );
 				camera.target = bolaMersh;
 
 				var colisionBola = new Cube( 20, 20, 20, 1, 1 );
@@ -181,15 +181,15 @@
 			}
 			
 			// Asocia las texturas para los bloques del escenario
-			function getMaterial (qmark) {
+			function getMaterial (slime) {
 				var imageTextureMaterial = new THREE.MeshLambertMaterial( { map: new THREE.Texture(), shading: THREE.FlatShading } );
 				var img = new Image();
 				imageTextureMaterial.map.image = img;
 				img.onload = function () {
 					imageTextureMaterial.map.image.loaded = 1;
 				};
-				if (qmark) {
-					img.src = "textures/qmark1.png";
+				if (slime) {
+					img.src = "textures/slime.png";
 				} else {
 					img.src = "textures/rock.png";
 				}
