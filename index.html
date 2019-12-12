@@ -108,11 +108,11 @@
 				// Se define la esfera la cual será controlada por el usuario
 				var bola = new Sphere( 50, 15, 15);
 
-				bolaMersh = addMesh( bola, 1,  -300, FLOOR+1000, 0, 0,0,0, getMaterial() );
+				bolaMersh = addMesh( bola, 1,  -300, FLOOR+1000, 0, 0,0,0, getSphereMaterial() );
 				camera.target = bolaMersh;
 
 				var colisionBola = new Cube( 20, 20, 20, 1, 1 );
-				collideMesh = addMesh( colisionBola, 1,  -300, FLOOR+5000, 0, 0,0,0, getMaterial() );
+				collideMesh = addMesh( colisionBola, 1,  -300, FLOOR+5000, 0, 0,0,0, getSphereMaterial() );
 
 				// Se define la forma de los cubos de la escena
 				var cube = new Cube( 200, 200, 200, 1, 1 );
@@ -141,7 +141,7 @@
 				// Se define el plano y su tamaño
 				plane = new Plane( 40, 40, 15, 15 );
 
-				// Se definie la textura para cada uno de los cuadros que componen el plano
+				// Se define la textura para cada uno de los cuadros que componen el plano
 				for(var i=0; i<plane.uvs.length; i++) {
 					var uvs = plane.uvs[i];
 					for ( j = 0, jl = uvs.length; j < jl; j++ ) {
@@ -166,6 +166,18 @@
 				// Determinar cuando se presionan o no las teclas y llama los eventos
 				document.addEventListener( 'keydown', keyD, false );
 				document.addEventListener( 'keyup', keyU, false );
+			}
+						
+			// Asocia las texturas para la esfera
+			function getSphereMaterial () {
+				var imageTextureMaterial = new THREE.MeshLambertMaterial( { map: new THREE.Texture(), shading: THREE.FlatShading } );
+				var img = new Image();
+				imageTextureMaterial.map.image = img;
+				img.onload = function () {
+					imageTextureMaterial.map.image.loaded = 1;
+				};
+				img.src = "textures/creeper.png";
+				return imageTextureMaterial;
 			}
 			
 			// Asocia las texturas para los bloques del escenario
