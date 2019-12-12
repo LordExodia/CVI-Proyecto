@@ -95,7 +95,7 @@
 				directionalLight.position.normalize();
 				scene.addLight( directionalLight );
 
-				pointLight = new THREE.PointLight( 0xF89B3D );
+				pointLight = new THREE.PointLight( 0xF89B3D, 1.0 );
 				pointLight.position.x = 0;
 				pointLight.position.y = 0;
 				pointLight.position.z = 0;
@@ -132,6 +132,14 @@
 
 				plane = new Plane( 40, 40, 15, 15 );
 				
+				for(var i=0; i<plane.uvs.length; i++) {
+					var uvs = plane.uvs[i];
+					for ( j = 0, jl = uvs.length; j < jl; j++ ) {
+						uvs[j].u *= 10;
+						uvs[j].v *= 10;
+					}
+					
+				}
 
 				addMesh( plane, 100,  0, FLOOR, 0, -1.57,0,0, getFloorMaterial() );
 
