@@ -12,7 +12,6 @@
 		<script type="text/javascript" src="keys.js"></script>
 
 		<script type="text/javascript" src="general/RequestAnimationFrame.js"></script>
-		<script type="text/javascript" src="general/Stats.js"></script>
 		<script type="text/javascript" src="general/info.js"></script>
 
 
@@ -154,13 +153,6 @@
 					document.getElementById('info').style.display = "block";
 					return;
 				}
-
-
-				stats = new Stats();
-				stats.domElement.style.position = 'absolute';
-				stats.domElement.style.top = '0px';
-				stats.domElement.style.zIndex = 100;
-				container.appendChild( stats.domElement );
 				
 				document.addEventListener( 'keydown', keyD, false );
 				document.addEventListener( 'keyup', keyU, false );
@@ -387,7 +379,6 @@
 				
 				if ( render_gl && has_gl ) webglRenderer.render( scene, camera );
 
-				stats.update();
 
 			}
 
