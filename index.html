@@ -8,11 +8,12 @@
 	
 	<body>
 		<p>Usa w,a,s,d para desplazarte<br>
-		Usa espacio para saltar</p>
+		usa espacio para saltar</p>
 		<script type="text/javascript" src="build/ThreeExtras.js"></script>
 		<script type="text/javascript" src="build/RequestAnimationFrame.js"></script>
 
 		<script type="text/javascript" src="keys.js"></script>
+
 		
 		<script type="text/javascript">
 
@@ -21,7 +22,6 @@
 			var FLOOR = -250;
 
 			var container;
-			var stats;
 
 			var camera;
 			var scene;
@@ -108,9 +108,9 @@
 				pointLight.position.z = 0;
 				scene.addLight( pointLight );
 				
-				var cubeRef = new Cube( 100, 100, 100, 1, 1 );
+				var bola = new Sphere( 50, 15, 15);
 
-				cubeRefMesh = addMesh( cubeRef, 1,  -300, FLOOR+50, 0, 0,0,0, new THREE.MeshLambertMaterial( { color: 0xFF0000 } ) );
+				cubeRefMesh = addMesh( bola, 1,  -300, FLOOR+1000, 0, 0,0,0, new THREE.MeshLambertMaterial( { color: 0xFF0000 } ) );
 				camera.target = cubeRefMesh;
 
 				var collideCube = new Cube( 20, 20, 20, 1, 1 );
@@ -127,7 +127,7 @@
 
 				addMesh( cube, 1,  0, FLOOR+150, -2100, 0,1.57,0, getMaterial() );
 
-				plane = new Plane( 100, 100, 15, 10 );
+				plane = new Plane( 40, 40, 15, 15 );
 				
 				for(var i=0; i<plane.uvs.length; i++) {
 					var uvs = plane.uvs[i];
