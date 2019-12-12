@@ -108,11 +108,11 @@
 				// Se define la esfera la cual será controlada por el usuario
 				var bola = new Sphere( 50, 15, 15);
 
-				bolaMersh = addMesh( bola, 1,  -300, FLOOR+1000, 0, 0,0,0, new THREE.MeshLambertMaterial( { color: 0xC682C2 } ) );
+				bolaMersh = addMesh( bola, 1,  -300, FLOOR+1000, 0, 0,0,0, getMaterial() );
 				camera.target = bolaMersh;
 
 				var colisionBola = new Cube( 20, 20, 20, 1, 1 );
-				collideMesh = addMesh( colisionBola, 1,  -300, FLOOR+5000, 0, 0,0,0, new THREE.MeshLambertMaterial( { color: 0xC682C2 } ) );
+				collideMesh = addMesh( colisionBola, 1,  -300, FLOOR+5000, 0, 0,0,0, getMaterial() );
 
 				// Se define la forma de los cubos de la escena
 				var cube = new Cube( 200, 200, 200, 1, 1 );
