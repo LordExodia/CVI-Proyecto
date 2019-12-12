@@ -47,7 +47,9 @@
 			var onGround = true;
 
 			init(), animate();
-							
+					
+			// Funcion que hace uso de Three JS para agregar los objetos a la escena con ciertas
+			// porpiedades determinadas.
 			function addMesh( geometry, scale, x, y, z, rx, ry, rz, material ) {
 				
 				mesh = new THREE.Mesh( geometry, material );
