@@ -7,8 +7,7 @@
 	</head>
 	
 	<body>
-		<p>Usa w,a,s,d para desplazarte<br>
-		Usa espacio para saltar<br>
+		<p>Usa w,a,s,d para desplazarte y espacio para saltar<br>
 		¡Salta sobre cada cubo, solo por diversión!</p>
 		<script type="text/javascript" src="build/ThreeExtras.js"></script>
 		<script type="text/javascript" src="build/RequestAnimationFrame.js"></script>
@@ -133,14 +132,6 @@
 
 				plane = new Plane( 40, 40, 15, 15 );
 				
-				for(var i=0; i<plane.uvs.length; i++) {
-					var uvs = plane.uvs[i];
-					for ( j = 0, jl = uvs.length; j < jl; j++ ) {
-						uvs[j].u *= 10;
-						uvs[j].v *= 10;
-					}
-					
-				}
 
 				addMesh( plane, 100,  0, FLOOR, 0, -1.57,0,0, getFloorMaterial() );
 
@@ -172,7 +163,6 @@
 				}
 				return imageTextureMaterial;
 			}
-
 
 			function getFloorMaterial () {
 				var floorTextureMaterial = new THREE.MeshPhongMaterial( { map: new THREE.Texture(null, THREE.UVMapping, THREE.RepeatWrapping, THREE.RepeatWrapping), ambient: 0xCCCCCC, specular: 0x666666, shininess: 90, shading: THREE.SmoothShading } );
@@ -372,16 +362,13 @@
 				camera.position.y = 200+cubeRefMesh.position.y;
 				camera.position.z = cubeRefMesh.position.z+600;
 				
-				pointLight.position.x = 1000*Math.cos(r);
-				pointLight.position.z = 1000*Math.sin(r);
+				pointLight.position.x = 1100*Math.cos(r);
+				pointLight.position.z = 1100*Math.sin(r);
 
 				r += 0.01;
 				
 				if ( render_gl && has_gl ) webglRenderer.render( scene, camera );
-
-
 			}
-
 
 		</script>
 
