@@ -106,9 +106,9 @@
 				scene.addLight( pointLight );
 
 				// Se define la esfera la cual será controlada por el usuario
-				var bola = new Sphere( 50, 15, 15);
+				var bola = new Sphere( 50, 20, 20);
 
-				bolaMersh = addMesh( bola, 1,  -300, FLOOR+1000, 0, 0,0,0, getSphereMaterial() );
+				bolaMersh = addMesh( bola, 1,  -300, FLOOR+1000, 0, 0.7,0,0, getSphereMaterial() );
 				camera.target = bolaMersh;
 
 				var colisionBola = new Cube( 20, 20, 20, 1, 1 );
