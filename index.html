@@ -8,7 +8,8 @@
 	
 	<body>
 		<p>Usa w,a,s,d para desplazarte<br>
-		usa espacio para saltar</p>
+		Usa espacio para saltar<br>
+		¡Salta sobre cada cubo, solo por diversión!</p>
 		<script type="text/javascript" src="build/ThreeExtras.js"></script>
 		<script type="text/javascript" src="build/RequestAnimationFrame.js"></script>
 
@@ -30,9 +31,6 @@
 			var mesh, zmesh, lightMesh, geometry;
 			
 			var directionalLight, pointLight;
-			
-			var mouseX = 0;
-			var mouseY = 0;
 
 			var windowHalfX = window.innerWidth >> 1;
 			var windowHalfY = window.innerHeight >> 1;
@@ -88,10 +86,10 @@
 
 				// LIGHTS
 
-				var ambient = new THREE.AmbientLight( 0x101010 );
+				var ambient = new THREE.AmbientLight( 0xEE7259 );
 				scene.addLight( ambient );
 
-				directionalLight = new THREE.DirectionalLight( 0xffffff, 1.0 );
+				directionalLight = new THREE.DirectionalLight( 0x59A6EE, 1.0 );
 				directionalLight.position.x = 1;
 				directionalLight.position.y = 1;
 				directionalLight.position.z = 2;
@@ -131,7 +129,7 @@
 				addMesh( cube, 1,  -900,  FLOOR+100+600,    0, 0,1.57,0, getMaterial() );
 				addMesh( cube, 1,  - 600, FLOOR+100+300,  300, 0,1.57,0, getMaterial(true) );
 
-				addMesh( cube, 1,  0, FLOOR+150, -2100, 0,1.57,0, getMaterial() );
+				addMesh( cube, 1,  0, FLOOR+100, -2100, 0,1.57,0, getMaterial() );
 
 				plane = new Plane( 40, 40, 15, 15 );
 				
